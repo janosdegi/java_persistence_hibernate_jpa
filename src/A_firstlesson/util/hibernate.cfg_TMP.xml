@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <!--<property name="connection.driver_class">com.postgresql.jdbc.Driver</property>-->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <!--<property name="connection.url">jdbc:mysql://localhost:3306/hello-world</property>-->
+        <property name="connection.url">jdbc:postgresql://localhost:5432/java_persistence_hibernate_jpa</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">123456</property>
+
+        <!-- SQL dialect -->
+        <!--<property name="dialect">org.hibernate.dialect.MySQLDialect</property>-->
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Use XML-based mapping metadata -->
+        <!--<mapping class="domain.Message"/>-->
+        <!--<mapping resource="domain/Message.hbm.xml"/>-->
+
+        <!-- Create/update tables automatically using mapping metadata -->
+        <property name="hbm2ddl.auto">update</property>
+
+
+        <!-- Use Annotation-based mapping metadata -->
+        <mapping class="A_firstlesson.entity1.Message"/>
+        <!--<mapping class="entity.Person"/>-->
+
+        <mapping class="A_firstlesson.entity1.Student"/>
+        <mapping class="A_firstlesson.entity1.Guide"/>
+        <!--<mapping class="one_to_many_relationship.Student"/>-->
+        <!--<mapping class="one_to_many_relationship.Guide"/>-->
+        <!--<mapping class="one_to_one_relationship.entity.Customer"/>-->
+        <!--<mapping class="one_to_one_relationship.entity.Passport"/>-->
+        <!--<mapping class="many_to_many_relationship.entity.Movie"/>-->
+        <!--<mapping class="many_to_many_relationship.entity.Actor"/>-->
+
+    </session-factory>
+</hibernate-configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

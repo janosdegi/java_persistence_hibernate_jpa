@@ -1,0 +1,61 @@
+<!--<?xml version='1.0' encoding='utf-8'?>-->
+<!--<!DOCTYPE hibernate-configuration PUBLIC-->
+        <!--"-//Hibernate/Hibernate Configuration DTD 3.0//EN"-->
+        <!--"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">-->
+
+<!--<hibernate-configuration>-->
+    <!--<session-factory>-->
+
+        <!--&lt;!&ndash; Database connection settings &ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="connection.driver_class">com.postgresql.jdbc.Driver</property>&ndash;&gt;-->
+        <!--<property name="connection.driver_class">org.postgresql.Driver</property>-->
+        <!--&lt;!&ndash;<property name="connection.url">jdbc:mysql://localhost:3306/hello-world</property>&ndash;&gt;-->
+        <!--<property name="connection.url">jdbc:postgresql://localhost:5432/java_persistence_hibernate_jpa</property>-->
+        <!--<property name="connection.username">postgres</property>-->
+        <!--<property name="connection.password">123456</property>-->
+
+        <!--&lt;!&ndash; SQL dialect &ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="dialect">org.hibernate.dialect.MySQLDialect</property>&ndash;&gt;-->
+        <!--<property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>-->
+
+        <!--&lt;!&ndash; Echo all executed SQL to stdout &ndash;&gt;-->
+        <!--<property name="show_sql">true</property>-->
+
+        <!--&lt;!&ndash; Use XML-based mapping metadata &ndash;&gt;-->
+        <!--&lt;!&ndash;<mapping class="domain.Message"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapping resource="domain/Message.hbm.xml"/>&ndash;&gt;-->
+
+        <!--&lt;!&ndash; Create/update tables automatically using mapping metadata &ndash;&gt;-->
+        <!--<property name="hbm2ddl.auto">update</property>-->
+
+
+        <!--&lt;!&ndash; Use Annotation-based mapping metadata &ndash;&gt;-->
+        <!--&lt;!&ndash;<mapping class="entity.Message"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapping class="entity.Person"/>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<mapping class="Student"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapping class="Guide"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapping class="one_to_many_relationship.Student"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapping class="one_to_many_relationship.Guide"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapping class="one_to_one_relationship.entity.Customer"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<mapping class="one_to_one_relationship.entity.Passport"/>&ndash;&gt;-->
+        <!--<mapping class="many_to_many_relationship.entity.Movie"/>-->
+        <!--<mapping class="many_to_many_relationship.entity.Actor"/>-->
+
+    <!--</session-factory>-->
+<!--</hibernate-configuration>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
