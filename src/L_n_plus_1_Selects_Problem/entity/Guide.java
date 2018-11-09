@@ -1,5 +1,5 @@
 
-package N_plus_1_Selects_Problem.entity;
+package L_n_plus_1_Selects_Problem.entity;
 
 import java.util.HashSet;
 import java.util.Set;

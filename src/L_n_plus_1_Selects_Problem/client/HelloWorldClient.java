@@ -1,14 +1,13 @@
 
-package N_plus_1_Selects_Problem.client;
+package L_n_plus_1_Selects_Problem.client;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
 
-import N_plus_1_Selects_Problem.entity.Guide;
-import N_plus_1_Selects_Problem.entity.Student;
+import L_n_plus_1_Selects_Problem.entity.Guide;
+import L_n_plus_1_Selects_Problem.entity.Student;
 
 public class HelloWorldClient {
 	public static void main(String[] args) {
@@ -18,6 +17,24 @@ public class HelloWorldClient {
 		EntityTransaction txn = em.getTransaction();
 		try {
 			txn.begin();
+
+			//-----------------------------------------------------------------------------------------------------
+			// N+1 selects problem: by default single point associations (@OneToOne, @ManyToOne) are eagerly fetched
+			// 1 select for all the parent objects (student)
+			// 1 select for each child object
+			// even the child objects are not wanted to fetch from db.
+			// -> leads to bad performance
+			// solution 1: parent: fetch = FetchType.LAZY
+			//
+			// but what if i need only the name attribute of all child object?
+			// N+1 selects problem again.
+			//
+			// solution 2: writing jpql query to eagerly load the associated guide object:
+			// "select student from Student student left join fetch student.guide"
+			// the generated sql this time: only one select statement issued with a left outer join
+			//
+			//
+			//-----------------------------------------------------------------------------------------------------
 
 			//Adding data to guide and student table by adding a Guide and associating a Student with it
 			Guide guide = new Guide("2000DO10777", "David Crow", 3000);		
