@@ -26,10 +26,10 @@ public class HelloWorldClient {
 			// -> leads to bad performance
 			// solution 1: parent: fetch = FetchType.LAZY
 			//
-			// but what if i need only the name attribute of all child object?
+			// but what if we need only the name attribute of all child object?
 			// N+1 selects problem again.
 			//
-			// solution 2: writing jpql query to eagerly load the associated guide object:
+			// solution 2: writing jpql query to eagerly load the associated guide objects:
 			// "select student from Student student left join fetch student.guide"
 			// the generated sql this time: only one select statement issued with a left outer join
 			//
