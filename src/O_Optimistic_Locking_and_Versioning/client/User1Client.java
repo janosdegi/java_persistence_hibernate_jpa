@@ -1,4 +1,4 @@
-package Optimistic_Locking_and_Versioning.client;
+package O_Optimistic_Locking_and_Versioning.client;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -6,11 +6,18 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.OptimisticLockException;
 import javax.persistence.Persistence;
 
-import Optimistic_Locking_and_Versioning.entity.Guide;
+import O_Optimistic_Locking_and_Versioning.entity.Guide;
 
 public class User1Client {	
 	public static void main(String[] args) {
-		
+
+		// Last commit wins - lost update problem
+		// =>versioning
+		// an old version of a detached object can not update
+		// a persisted record with a newer version of the object
+		// in this case hibernate will throw an OptimisticLockException
+		// =>"The guide was updated by some other user while you were doing interesting things."
+
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("java_persistence_hibernate_jpa");
 		EntityManager em1 = emf.createEntityManager();
 		em1.getTransaction().begin();		

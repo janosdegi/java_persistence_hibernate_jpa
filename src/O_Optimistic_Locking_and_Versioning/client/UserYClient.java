@@ -1,19 +1,19 @@
-package Optimistic_Locking_and_Versioning.client;
+package O_Optimistic_Locking_and_Versioning.client;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import Optimistic_Locking_and_Versioning.entity.Guide;
+import O_Optimistic_Locking_and_Versioning.entity.Guide;
 
-public class User2Client {	
+public class UserYClient {	
 	public static void main(String[] args) {
 		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("java_persistence_hibernate_jpa");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello-world");
 		EntityManager em1 = emf.createEntityManager();
 		em1.getTransaction().begin();		
 		
-		Guide guide = em1.find(Guide.class, 31L);
+		Guide guide = em1.find(Guide.class, 3L);				
 	
 		em1.getTransaction().commit();
 		em1.close();	

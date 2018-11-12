@@ -1,7 +1,6 @@
-package Optimistic_Locking_and_Versioning.entity;
+package O_Optimistic_Locking_and_Versioning.entity;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -12,9 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
-
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 @Entity
 public class Guide {
@@ -31,11 +27,16 @@ public class Guide {
 	
 
 	
-	//when you're altering the schema of your tables to add the version column to use versioning, don't forget to add the default for that column as 0 like ALTER TABLE `guide` ADD `version` INT(11) NOT NULL DEFAULT '0'; 
+	// when you're altering the schema of your tables to add the version column to use versioning,
+	// don't forget to add the default for that column as 0 like
+	// ALTER TABLE `guide` ADD `version` INT(11) NOT NULL DEFAULT '0';
 	@Version
 	private Integer version;
 
-	//but if you're planning to use versioning right from the beginning, it's always good to have @Column(columnDefinition = "integer DEFAULT 0", nullable = false)  mapping added along with the @Version  annotation at the private Integer version;  attribute. It is to define that the column is non-nullable and its default value is 0.
+	// but if you're planning to use versioning right from the beginning,
+	// it's always good to have @Column(columnDefinition = "integer DEFAULT 0", nullable = false)
+	// mapping added along with the @Version  annotation at the private Integer version;  attribute.
+	// It is to define that the column is non-nullable and its default value is 0.
 	/*
 	@Column(columnDefinition = "integer DEFAULT 0", nullable = false) 
 	@Version

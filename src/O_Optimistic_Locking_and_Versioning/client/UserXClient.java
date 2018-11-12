@@ -1,4 +1,4 @@
-package Optimistic_Locking_and_Versioning.client;
+package O_Optimistic_Locking_and_Versioning.client;
 
 import java.util.List;
 

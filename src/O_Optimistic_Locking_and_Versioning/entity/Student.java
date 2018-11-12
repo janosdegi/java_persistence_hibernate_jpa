@@ -1,4 +1,4 @@
-package Optimistic_Locking_and_Versioning.entity;
+package O_Optimistic_Locking_and_Versioning.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
