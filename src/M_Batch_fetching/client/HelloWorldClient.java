@@ -24,7 +24,7 @@ public class HelloWorldClient {
 			//
 			// we have 10.000 students and each of them has a guide for it.
 			// -> fetch = FetchType.LAZY
-			// only the students entities (10.000) will be loaded in the first leve cache (Entity Manager).
+			// only the students entities (10.000) will be loaded in the first level cache (Entity Manager).
 			// what if we need to print the name of the guide as well?
 			//
 			// -> student.getGuide().getName()
@@ -32,7 +32,7 @@ public class HelloWorldClient {
 			// and by all of the guide associated to the sudent objects will be generated a select statement.
 			// in total: 10.000 extra select statement -> bad performance!
 			// Guide annotated with @BatchSize(size=4)
-			// it is taking just one select statement to load four guides an once
+			// it is taking just one select statement to load four guides at once
 			// -> 4 proxy will be initialized at once -> 1 select statement instead of 4
 			// (2500 instead of 10.000 exta select statement)
 			//
